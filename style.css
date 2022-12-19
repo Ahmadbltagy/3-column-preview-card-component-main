@@ -1,0 +1,121 @@
+/* font-family: 'Big Shoulders Display', cursive; */
+/* font-family: 'Lexend Deca', sans-serif; */
+/*
+Bright orange: hsl(31, 77%, 52%)
+Dark cyan: hsl(184, 100%, 22%)
+Very dark cyan: hsl(179, 100%, 13%)
+
+### Neutral
+
+Transparent white (paragraphs): hsla(0, 0%, 100%, 0.75)
+Very light gray (background, headings, buttons): hsl(0, 0%, 95%)
+
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.cars {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.car {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 50px;
+}
+.car-type {
+  font-family: "Big Shoulders Display", cursive;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: hsl(0, 0%, 95%);
+  margin-bottom: 22px;
+}
+.car-details {
+  font-family: "Lexend Deca", sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  color: hsl(0, 0%, 95%);
+  margin-bottom: 50px;
+  line-height: 32px;
+}
+.icon {
+  width: 90px;
+}
+.sedan {
+  background-color: hsl(31, 77%, 52%);
+}
+.suv {
+  background-color: hsl(184, 100%, 22%);
+}
+.luxury {
+  background-color: hsl(179, 100%, 13%);
+}
+
+.btn:link,
+.btn:visited {
+  display: inline-block;
+  text-decoration: none;
+  padding: 12px 40px;
+  border-radius: 100px;
+  background-color: hsla(0, 0%, 100%, 0.75);
+  align-self: start;
+  font-family: "Lexend Deca", sans-serif;
+  font-size: 18px;
+}
+.btn:hover,
+.btn:active {
+  background-color: none;
+  background-color: rgba(42, 0, 0, 0);
+  color: hsla(0, 0%, 100%, 0.75);
+}
+.sedan .btn {
+  color: hsl(31, 77%, 52%);
+}
+.suv .btn {
+  color: hsl(184, 100%, 22%);
+}
+.luxury .btn {
+  color: hsl(179, 100%, 13%);
+}
+
+.btn:hover,
+.btn:active {
+  background-color: transparent;
+  color: hsla(0, 0%, 100%, 0.75);
+  box-shadow: 0 0 2px 1px hsla(0, 0%, 100%, 0.75) inset;
+}
+
+@media (max-width: 375px) {
+  .cars {
+    grid-template-columns: 1fr;
+    padding: 20px;
+    top: 0;
+    left: 0;
+    transform: translate(0, 0);
+  }
+  .car-details {
+    line-height: 20px;
+    margin-bottom: 10px;
+    font-size: 15px;
+  }
+  .sedan {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+  .luxury {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+}
